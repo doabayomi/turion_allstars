@@ -1,0 +1,608 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turion AllStars: Nigerian Esports Event</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="main.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/brand/favicon/favicon.ico"
+    />
+  </head>
+
+  <body>
+    <!-- Animated Grid Background -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- Animated Shapes -->
+    <div class="shapes-container">
+      <div class="shape shape-circle"></div>
+      <div class="shape shape-triangle"></div>
+      <div class="shape shape-square"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo-link">
+          <!-- <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF5E00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00B2FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+                    <polygon points="20,8 32,16 32,24 20,32 8,24 8,16" fill="url(#logoGradient)" opacity="0.3"/>
+                    <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+                </svg> -->
+          <img
+            src="./images/brand/TURION ALLSTARS_noBG.png"
+            class="logo-svg"
+            alt="Turion AllStars Logo"
+          />
+          <span class="logo-text"
+            >TURION <br />
+            <span class="logo-text-sm">ALL STARS ★ ★ ★</span></span
+          >
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#features" class="nav-link">Register</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="text-rotator">
+          <div class="text-set active">
+            <h1 class="glitch-text" data-text="YOUR MOVE">THE ULT ARENA</h1>
+            <p class="subtitle">
+              A nationwide esports competition for the best gamers on one stage
+            </p>
+          </div>
+          <!-- <div class="text-set">
+            <h1 class="glitch-text" data-text="BE AN ALL STAR">
+              BE AN ALL STAR
+            </h1>
+            <p class="subtitle">Unleash your potential and become a legend</p>
+          </div>
+          <div class="text-set">
+            <h1 class="glitch-text" data-text="THE ULTIMATE ARENA">
+              THE ULTIMATE ARENA
+            </h1>
+            <p class="subtitle">
+              A nationwide esports competition for the best gamers on one stage
+            </p>
+          </div> -->
+        </div>
+      </div>
+      <div class="cta-container">
+        <a href="#features" class="cta-button cta-primary">Register Now</a>
+        <a href="#about" class="cta-button cta-secondary">Learn More</a>
+      </div>
+      <div class="event-locations">
+        <span>⚑ Lagos</span> | <span>⚑ Abuja</span> |
+        <span>⚑ Port Harcourt</span> |
+        <span>⚑ Kano </span>
+      </div>
+    </section>
+
+    <section id="features" class="hidden-anchor" aria-hidden="true"></section>
+
+    <div class="modal-overlay" id="registerModal" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="registerTitle"
+      >
+        <button
+          type="button"
+          class="modal-close"
+          id="closeRegisterBtn"
+          aria-label="Close registration form"
+        >
+          ×
+        </button>
+        <div class="modal-header">
+          <h2 id="registerTitle">Register for Turion AllStars</h2>
+          <p class="modal-subtitle">
+            Complete your registration in four quick steps.
+          </p>
+        </div>
+        <div class="modal-progress">
+          Step <span id="currentStep">1</span> of 4
+        </div>
+        <form id="registerForm" novalidate>
+          <div class="form-step active" data-step="1">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="middleName"
+                  >Middle Name <span class="optional">(optional)</span></label
+                >
+                <input type="text" id="middleName" name="middleName" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+            <div class="form-group">
+              <label for="regEmail">Email</label>
+              <input type="email" id="regEmail" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone"
+                >Phone Number <span class="optional">(optional)</span></label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="0812 345 6789"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  required
+                  placeholder="Lagos"
+                />
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" name="state" required>
+                  <option value="" disabled selected>Select a state</option>
+                  <option value="Abia">Abia</option>
+                  <option value="Lagos">Lagos</option>
+                  <option value="Abuja">FCT - Abuja</option>
+                  <option value="Rivers">Rivers</option>
+                  <option value="Kano">Kano</option>
+                  <option value="Oyo">Oyo</option>
+                  <option value="Delta">Delta</option>
+                  <option value="Kaduna">Kaduna</option>
+                  <option value="Enugu">Enugu</option>
+                  <option value="Ogun">Ogun</option>
+                  <option value="Anambra">Anambra</option>
+                  <option value="Edo">Edo</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="gamingCategory">Gaming Category</label>
+              <select id="gamingCategory" name="gamingCategory" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Call of Duty">Call of Duty</option>
+                <option value="Asphalt">Asphalt</option>
+                <option value="FIFA">FIFA</option>
+                <option value="eFootball">eFootball</option>
+                <option value="Mortal Kombat">Mortal Kombat</option>
+                <option value="PUBG">PUBG</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <p class="step-error" id="stepError"></p>
+            <div class="modal-actions">
+              <button
+                type="button"
+                class="btn btn-secondary prev-step"
+                disabled
+              >
+                Back
+              </button>
+              <button type="button" class="btn btn-primary next-step">
+                Next
+              </button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <p class="help-text">
+              Please follow at least one of our social channels before
+              continuing. Each link opens in a new tab.
+            </p>
+            <div class="social-grid">
+              <a
+                href="https://instagram.com/allstars"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
+                <img src="./images/socials/instagram.svg" alt="Instagram" />
+                Instagram
+              </a>
+              <a
+                href="https://x.com/allstars"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
+                <img src="./images/socials/x.svg" alt="X" />
+                X
+              </a>
+              <a
+                href="https://www.tiktok.com/@allstars"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
+                <img src="./images/socials/tik-tok.svg" alt="TikTok" />
+                TikTok
+              </a>
+            </div>
+            <p class="step-error" id="stepErrorSocial"></p>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary prev-step">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary next-step">
+                Continue
+              </button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="3">
+            <p class="help-text">
+              This is the registration fee. The original price is slashed, and
+              the new discounted price is shown below.
+            </p>
+            <div class="price-block">
+              <span class="price-old">₦7,500</span>
+              <span class="price-new">₦4,500</span>
+            </div>
+            <p class="help-text">
+              You are registering as a competitor for the selected gaming
+              category. Confirm to continue.
+            </p>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary prev-step">
+                Back
+              </button>
+              <button type="button" class="btn btn-primary next-step">
+                Confirm
+              </button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="4">
+            <div class="confirmation-summary">
+              <p><strong>Name</strong>: <span id="summaryName"></span></p>
+              <p><strong>Email</strong>: <span id="summaryEmail"></span></p>
+              <p><strong>Phone</strong>: <span id="summaryPhone"></span></p>
+              <p>
+                <strong>Location</strong>: <span id="summaryLocation"></span>
+              </p>
+              <p>
+                <strong>Gaming Category</strong>:
+                <span id="summaryCategory"></span>
+              </p>
+              <p>
+                <strong>Followed Social</strong>:
+                <span id="summarySocial"></span>
+              </p>
+              <p><strong>Final Price</strong>: ₦4,500</p>
+            </div>
+            <p class="help-text">
+              Please review the details above. When you submit, your
+              registration request will be recorded.
+            </p>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary prev-step">
+                Back
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Confirm and Proceed to Payment
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Features Section with Tabs -->
+    <!-- 
+    <section class="features" id="features">
+        <h2 class="section-title">Core Features</h2>
+        <div class="features-container">
+            <div class="feature-tabs">
+                <div class="tab-item active" data-tab="performance">
+                    <span class="tab-icon">⚡</span>
+                    <span>Performance</span>
+                </div>
+                <div class="tab-item" data-tab="security">
+                    <span class="tab-icon">🔒</span>
+                    <span>Security</span>
+                </div>
+                <div class="tab-item" data-tab="network">
+                    <span class="tab-icon">🌐</span>
+                    <span>Network</span>
+                </div>
+                <div class="tab-item" data-tab="analytics">
+                    <span class="tab-icon">📊</span>
+                    <span>Analytics</span>
+                </div>
+                <div class="tab-item" data-tab="integration">
+                    <span class="tab-icon">🔧</span>
+                    <span>Integration</span>
+                </div>
+            </div>
+            <div class="feature-content">
+                <div class="content-panel active" id="performance">
+                    <h3>Lightning Fast Performance</h3>
+                    <p>Experience unprecedented speed with our quantum-powered infrastructure. Built on cutting-edge technology that delivers results at the speed of thought. Electric Xtra CSS template is brought to you by TemplateMo website.</p>
+                    <ul class="feature-list">
+                        <li>Sub-millisecond response times</li>
+                        <li>99.99% uptime guarantee</li>
+                        <li>Automatic scaling based on demand</li>
+                        <li>Real-time data synchronization</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="security">
+                    <h3>Military-Grade Security</h3>
+                    <p>Your data is protected by the most advanced encryption protocols available. Multi-layered security ensures complete protection against cyber threats. You may tell your friends about TemplateMo free css website and how easy it is.</p>
+                    <ul class="feature-list">
+                        <li>256-bit AES encryption</li>
+                        <li>Biometric authentication</li>
+                        <li>Zero-knowledge architecture</li>
+                        <li>Real-time threat detection</li>
+                        <li>Automated security updates</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="network">
+                    <h3>Global Neural Network</h3>
+                    <p>Connect to our worldwide infrastructure that spans across continents. Seamless integration with existing systems and future-proof architecture.</p>
+                    <ul class="feature-list">
+                        <li>200+ global data centers</li>
+                        <li>Intelligent routing algorithms</li>
+                        <li>Cross-platform compatibility</li>
+                        <li>5G and satellite connectivity</li>
+                        <li>Decentralized architecture</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="analytics">
+                    <h3>Advanced Analytics</h3>
+                    <p>Harness the power of AI-driven insights to make data-driven decisions. Real-time analytics and predictive modeling at your fingertips.</p>
+                    <ul class="feature-list">
+                        <li>Machine learning algorithms</li>
+                        <li>Predictive analytics</li>
+                        <li>Custom dashboard creation</li>
+                        <li>Real-time data visualization</li>
+                        <li>Automated reporting</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="integration">
+                    <h3>Seamless Integration</h3>
+                    <p>Connect with thousands of apps and services through our universal API. Built to work with your existing tools and workflows.</p>
+                    <ul class="feature-list">
+                        <li>RESTful API architecture</li>
+                        <li>WebSocket support</li>
+                        <li>SDK for major platforms</li>
+                        <li>One-click integrations</li>
+                        <li>Custom webhook support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <div class="spacer"></div>
+    <!-- Games Listing -->
+    <section class="about" id="about">
+      <h2 class="section-title balanced-heading">WHAT WE ARE</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="balanced-heading">The Nigerian Gaming Revolution</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellat
+            laudantium provident nisi nihil error quasi deleniti nesciunt
+            repudiandae aliquid, similique deserunt itaque velit eaque.
+            Voluptates deserunt mollitia sunt eligendi!
+          </p>
+        </div>
+        <div class="about-visual game-gallery">
+          <img
+            src="./images/games/call_of_duty.png"
+            class="game-listing"
+            alt="Call of Duty Game Image"
+          />
+          <img
+            src="./images/games/asphalt.png"
+            class="game-listing"
+            alt="Asphalt Game Image"
+          />
+          <img
+            src="./images/games/fifa.png"
+            class="game-listing"
+            alt="FIFA Game Image"
+          />
+          <img
+            src="./images/games/efootball.png"
+            class="game-listing"
+            alt="eFootball Game Image"
+          />
+          <img
+            src="./images/games/mortal_kombat.png"
+            class="game-listing"
+            alt="Mortal Kombat Game Image"
+          />
+          <img
+            src="./images/games/pubg.png"
+            class="game-listing"
+            alt="PUBG Game Image"
+          />
+        </div>
+      </div>
+
+      <!-- Possible Ad video -->
+      <div class="video-ad-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Fh4TPvNjUjM?si=BOWlW2tXibpDt369"
+          title="ALL STARS"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- <section class="about" id="about">
+        <h2 class="section-title">WHAT WE ARE</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>The Nigerian Gaming Revolution</h2>
+                <p>At ELECTRIC XTRA, we're not just building technology – we're crafting the future. Our mission is to bridge the gap between human potential and digital innovation, creating solutions that empower individuals and transform industries.</p>
+                <p>Founded by visionaries who saw beyond the limitations of current technology, ELECTRIC XTRA represents a quantum leap in digital infrastructure. We combine cutting-edge research with practical applications to deliver solutions that are both revolutionary and reliable.</p>
+                <p>Join us as we redefine what's possible in the digital age. The future isn't something that happens to us – it's something we create together.</p>
+            </div>
+            <div class="about-visual">
+                <div class="about-graphic"></div>
+            </div>
+        </div> -->
+
+    <!-- Second row with reversed layout -->
+    <!-- <div class="about-content" style="margin-top: 80px;">
+            <div class="about-visual">
+                <div class="about-graphic-alt">
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                </div>
+            </div>
+            <div class="about-text">
+                <h2>Innovation at Every Level</h2>
+                <p>Our commitment to excellence drives us to push boundaries and challenge conventions. With a team of world-class engineers, designers, and visionaries, we're creating solutions that not only meet today's needs but anticipate tomorrow's challenges.</p>
+                <p>From quantum computing to neural networks, from blockchain to AI, we're at the forefront of every technological revolution. Our integrated approach ensures that each innovation builds upon the last, creating a synergy that amplifies our impact.</p>
+                <p>Experience the power of true digital transformation. With ELECTRIC XTRA, you're not just adopting technology – you're embracing a philosophy of continuous evolution and limitless possibility.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2 class="section-title balanced-heading">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option value="partnerships">Partnerships</option>
+                <option value="inquiries">Inquiries</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <input type="hidden" name="extra_field" value="" />
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>Connect With Us</h3>
+          <div class="info-item">
+            <div class="info-icon">
+              <img src="./images/socials/instagram.svg" alt="Instagram" />
+            </div>
+            <div class="info-details">
+              <h4>Instagram</h4>
+              <p>@allstars</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <img src="./images/socials/x.svg" alt="X" />
+            </div>
+            <div class="info-details">
+              <h4>X</h4>
+              <p>@allstars</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">
+              <img src="./images/socials/tik-tok.svg" alt="TikTok" />
+            </div>
+            <div class="info-details">
+              <h4>TikTok</h4>
+              <p>@allstars</p>
+            </div>
+          </div>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <p>Interactive Map</p>
+              <p style="font-size: 0.9rem; margin-top: 10px">
+                Neo Tokyo, Sector 7
+              </p>
+            </div>
+            <div class="map-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+        </div>
+        <p class="copyright">© 2026 Turion All Stars. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
