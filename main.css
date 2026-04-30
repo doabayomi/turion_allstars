@@ -218,7 +218,7 @@ nav.scrolled {
 .logo-text {
 	font-family: 'Michroma', monospace;
 	/* font-size: 24px; */
-    font-size: 18px;
+    font-size: 24px;
     line-height: .7;
 	font-weight: 900;
 	background: linear-gradient(45deg, #f8cc48, #2ddede);
@@ -229,7 +229,7 @@ nav.scrolled {
 }
 
 .logo-text-sm {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1;
 }
 
@@ -245,6 +245,20 @@ nav.scrolled {
     color: #f8cc48;
     opacity: 0.4;
     margin-top: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.event-locations span {
+	display: flex;
+	align-items: center;
+}
+
+.event-locations img {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+    /* filter: invert(77%) sepia(100%) saturate(1000%) hue-rotate(45deg) brightness(100%); */
 }
 
 @keyframes glow {
@@ -300,21 +314,25 @@ nav.scrolled {
 	box-shadow: inset 0 0 10px rgba(248, 204, 72, 0.5);
 }
 
-.nav-links a::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 0;
-	height: 2px;
-	background: linear-gradient(90deg, #f8cc48, #2ddede);
-	transition: width 0.3s ease;
-	box-shadow: 0 0 10px rgba(248, 204, 72, 0.8);
+.nav-links a.partner-btn {
+	background: linear-gradient(45deg, #f8cc48, #2ddede);
+	color: #0a0a0a;
+	padding: 10px 20px;
+	/* border-radius: 4px; */
+	font-weight: 700;
+	opacity: 1;
+	box-shadow: 0 0 20px rgba(248, 204, 72, 0.3);
+	transition: all 0.3s ease;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-	width: 100%;
+.nav-links a.partner-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 5px 25px rgba(248, 204, 72, 0.5);
+}
+
+.nav-links a.partner-btn::before,
+.nav-links a.partner-btn::after {
+	display: none;
 }
 
 /* ===== MOBILE MENU ===== */
@@ -393,7 +411,7 @@ nav.scrolled {
 	display: block;
 }
 
-.glitch-text {
+/* .glitch-text {
 	font-family: 'Michroma', monospace;
 	font-size: clamp(0.98rem, 2.94vw, 2.4rem);
 	font-weight: 900;
@@ -402,7 +420,7 @@ nav.scrolled {
 	letter-spacing: 0.1em;
 	text-shadow: 0 0 20px rgba(255, 94, 0, 0.5);
 	overflow: hidden;
-}
+} */
 
 .char {
 	display: inline-block;
@@ -460,12 +478,13 @@ nav.scrolled {
 
 .glitch-text {
 	font-family: 'Michroma', monospace;
-	font-size: clamp(2.6rem, 10vw, 3.8rem);
+	font-size: clamp(1.1rem, 5vw, 3.2rem);
 	font-weight: 900;
 	position: relative;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	text-shadow: 0 0 20px rgba(255, 94, 0, 0.5);
+	white-space: nowrap;
 }
 
 .glitch-text::before,
